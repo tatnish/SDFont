@@ -1,0 +1,59 @@
+# About This Document
+This documents contains the license information of fonts modified and distributed with SDFonts
+
+# 1. Font Data Modification Process
+
+The font data used in SDFont module are modified (converted) by the following process.
+
+Note: The author of SDFont module didn't modify any font gryphs or shapes. All fonts are simply
+converted to bitmap font by freetype python module, and then stored in bytes data structure of micropython.
+
+
+## Horizontal Font Layout
+ 1. Convert OpenType / TrueType fonts to Bitmap data in MicroPython script (*.py) using a python script ["font_to_py.py."](https://github.com/tatnish/micropython-font-to-py)
+This script is modified by the author of SDFont module to handle unicode chars properly.
+The original script is available [here](https://github.com/peterhinch/micropython-font-to-py/).
+Converted characters are ASCII (0x20-0x7F), Hankaku Kana in JIS X 0201, and Kanjis in JIS X 0208
+
+ 2. Compile python font files using mpy-cross tool to create *.mpy files for performance improvement
+
+
+## Vertical Font Layout (font files that begins with "@")
+ 1. Extract Font data for vertical layout using "Subset Font Maker"([サブセットフォントメーカー](https://opentype.jp/))
+     - The tool can be downloadble from [here](https://opentype.jp/subsetfontmk.htm)
+
+ 2. Rest are the same as steps for Horizontal Font Layout
+
+# 2. Font License information for the modified fonts made for SDFont module.
+The license of each modified font follows that of its original font unless otherwise clearly noted.
+I want to thank all designers, developers, and engineers related to the fonts below.
+
+
+# 3. Original Font Information  
+
+This section contains the detail information about the original fonts.
+The version of SIL Open Source License is 1.1 unless otherwise clearly specified.
+
+## Klee One (Regular)
+Designed by: [Fontworks Inc.](https://fontworks.co.jp/)
+Original Font Repository: https://github.com/fontworks-fonts/Klee/
+Font Info:https://fonts.google.com/specimen/Klee+One
+License: [SIL Open Font License](https://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&id=OFL)
+
+## Stick B (Regular)
+Designed by: [Fontworks Inc.](https://fontworks.co.jp/)
+Original Font Repository: https://github.com/fontworks-fonts/Stick
+Font Info: https://fonts.google.com/specimen/Stick?subset=japanese
+License: [SIL Open Font License](https://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&id=OFL)
+
+## Pixel Mplus 12
+Designed by: [itouhiro](https://itouhiro.hatenablog.com/entry/20130602/font)
+Downloadble from:https://itouhiro.hatenablog.com/entry/20130602/font)
+License: [M+ Font License](http://mplus-fonts.osdn.jp/mplus-bitmap-fonts/#license)
+Note: This font is modified from M+ bitmap fonts, Vertical Layout is not available
+
+## M PLUS Rounded 1c (Regular)
+Designed by: Coji Morishita, M+ Fonts Project
+Font Info: https://fonts.google.com/specimen/M+PLUS+Rounded+1c
+License: [SIL Open Font License](https://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&id=OFL)
+
